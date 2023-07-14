@@ -47,7 +47,7 @@ M.load = function(theme)
     DiffModified                = { fg = theme.colors.yellow, },
     DiffDelete                  = { bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.85), },
     DiffRemoved                 = "DiffDelete",
-    DiffText                    = { bg = utils.mixColors(theme.colors.blue, theme.colors.background, 0.75) },
+    DiffText                    = { bg = utils.mixColors(theme.colors.blue, theme.colors.background, 0.7) },
     diffChanged                 = "DiffChange",
     Pmenu                       = { bg = theme.colors.background },
     PmenuSel                    = {
