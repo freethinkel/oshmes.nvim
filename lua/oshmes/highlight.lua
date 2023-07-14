@@ -36,6 +36,13 @@ M.load = function(theme)
     MatchParen                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
     DiffAdd                     = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.6) },
+    DiffAdded                   = { fg = theme.colors.green },
+    DiffChange                  = { fg = theme.colors.foreground },
+    DiffChangeDelete            = { fg = theme.colors.red, },
+    DiffModified                = { fg = theme.colors.yellow, },
+    DiffDelete                  = { fg = theme.colors.red, },
+    DiffRemoved                 = { fg = theme.colors.red },
+    DiffText                    = { fg = theme.colors.white, bg = theme.colors.black, },
     Pmenu                       = { bg = theme.colors.background },
     PmenuSel                    = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
