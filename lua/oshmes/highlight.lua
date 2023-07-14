@@ -28,7 +28,10 @@ M.load = function(theme)
     VertSplit                   = "SecondaryBackgroundEmpty",
     Title                       = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1), },
-    Search                      = { bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8), },
+    Search                      = {
+      bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
+      underline = false,
+    },
     IncSearch                   = "Search",
     MatchParen                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
@@ -36,6 +39,11 @@ M.load = function(theme)
     Pmenu                       = { bg = theme.colors.background },
     PmenuSel                    = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
+
+    -- MULTI_CURSOR
+    VM_Insert                   = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.4) },
+    VM_Cursor                   = "Cursor",
+    VM_Extend                   = { bg = utils.mixColors(theme.colors.cyan, theme.colors.background, 0.2) },
 
     -- SYNTAX
     Error                       = {
