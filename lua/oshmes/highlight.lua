@@ -18,7 +18,9 @@ M.load = function(theme)
     CursorLineNr                = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1), },
     CursorLine                  = {
-      bg = utils.mixColors(theme.colors.background, theme.colors.blue, 0.07) },
+      bg = utils.mixColors(theme.colors.background, theme.colors.blue, 0.07),
+      ctermfg = "white"
+    },
     Visual                      = "CursorLine",
     SignColumn                  = { bg = theme.colors.background },
     NonText                     = "Comment",
@@ -27,7 +29,9 @@ M.load = function(theme)
     DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     VertSplit                   = "SecondaryBackgroundEmpty",
     Title                       = {
-      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1), },
+      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1),
+    },
+    FoldColumn                  = { bg = "none" },
     Search                      = {
       bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
       underline = false,
