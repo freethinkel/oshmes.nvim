@@ -19,18 +19,17 @@ M.load = function(theme)
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1), },
     CursorLine                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.blue, 0.07),
-      ctermfg = "white"
+      -- ctermfg = "white"
     },
     Visual                      = "CursorLine",
     SignColumn                  = { bg = theme.colors.background },
     NonText                     = "Comment",
     NormalFloat                 = "Normal",
-    DiagnosticError             = { fg = theme.colors.red },
-    DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     VertSplit                   = "SecondaryBackgroundEmpty",
     Title                       = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1),
     },
+    SpecialKey                  = { fg = theme.colors.cyan },
     FoldColumn                  = { bg = "none" },
     Search                      = {
       bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
@@ -335,6 +334,12 @@ M.load = function(theme)
     ["@lsp.type.enumMember"]    = { fg = theme.colors.foreground },
     ["@lsp.type.function"]      = { fg = theme.colors.magenta },
     ["@lsp.type.variable"]      = { fg = theme.colors.blue },
+    DiagnosticHint              = { fg = theme.colors.magenta },
+    DiagnosticError             = { fg = theme.colors.red },
+    DiagnosticWarn              = { fg = theme.colors.yellow },
+    DiagnosticInformation       = { fg = theme.colors.green },
+    LspSignatureActiveParameter = { fg = theme.colors.black, bg = theme.colors.green },
+    DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     -- LSPSAGA
     SagaNormal                  = { bg = theme.colors.background },
     SagaBorder                  = {
