@@ -35,17 +35,19 @@ M.load = function(theme)
     IncSearch                   = "Search",
     MatchParen                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
-    DiffAdd                     = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.6) },
-    DiffAdded                   = { fg = theme.colors.green },
-    DiffChange                  = { fg = theme.colors.foreground },
+    DiffAdd                     = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.8) },
+    DiffAdded                   = "DiffAdd",
+    DiffChange                  = { bg = utils.mixColors(theme.colors.blue, theme.colors.background, 0.7) },
     DiffChangeDelete            = { fg = theme.colors.red, },
     DiffModified                = { fg = theme.colors.yellow, },
-    DiffDelete                  = { fg = theme.colors.red, },
-    DiffRemoved                 = { fg = theme.colors.red },
+    DiffDelete                  = { fg = utils.mixColors(theme.colors.red, theme.colors.background, 0.8), },
+    DiffRemoved                 = "DiffDelete",
     DiffText                    = { fg = theme.colors.white, bg = theme.colors.black, },
+    diffChanged                 = "DiffChange",
     Pmenu                       = { bg = theme.colors.background },
     PmenuSel                    = {
-      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2) },
+      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2),
+    },
 
     -- MULTI_CURSOR
     VM_Insert                   = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.4) },
