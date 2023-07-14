@@ -336,7 +336,7 @@ M.load = function(theme)
     ["@lsp.type.variable"]      = { fg = theme.colors.blue },
     DiagnosticHint              = { fg = theme.colors.magenta },
     DiagnosticError             = { fg = theme.colors.red },
-    DiagnosticWarn              = { fg = theme.colors.yellow },
+    DiagnosticWarn              = { fg = theme.colors.yellow, undercurl = true, underline = false, },
     DiagnosticInformation       = { fg = theme.colors.green },
     LspSignatureActiveParameter = { fg = theme.colors.black, bg = theme.colors.green },
     DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
