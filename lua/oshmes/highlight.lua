@@ -334,16 +334,21 @@ M.load = function(theme)
     ["@lsp.type.enumMember"]    = { fg = theme.colors.foreground },
     ["@lsp.type.function"]      = { fg = theme.colors.magenta },
     ["@lsp.type.variable"]      = { fg = theme.colors.blue },
-    DiagnosticHint              = { fg = theme.colors.magenta },
+    DiagnosticHint              = { fg = theme.colors.green },
     DiagnosticError             = { fg = theme.colors.red },
-    DiagnosticWarn              = { fg = theme.colors.yellow, undercurl = falske, underline = false, },
+    DiagnosticWarn              = { fg = theme.colors.yellow, undercurl = false, underline = false, },
     DiagnosticInformation       = { fg = theme.colors.green },
     LspSignatureActiveParameter = { fg = theme.colors.black, bg = theme.colors.green },
     DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     DiagnosticVirtualTextWarn   = {
       fg = theme.colors.yellow,
-      bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
+      bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.85),
     },
+    DiagnosticVirtualTextError  = {
+      fg = theme.colors.red,
+      bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.85),
+    },
+    DiagnosticUnderlineWarn     = { fg = theme.colors.yellow, underline = false, undercurl = true },
     -- LSPSAGA
     SagaNormal                  = { bg = theme.colors.background },
     SagaBorder                  = {
