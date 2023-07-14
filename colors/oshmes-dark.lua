@@ -3,7 +3,7 @@ require("oshmes").setup({
   colors = {
     background = "#1f1f1f",
     foreground = "#bbbbbb",
-    black = "#1a1a1a",
+    black = "#3a3a3a",
     red = "#F97583",
     green = "#71efb3",
     yellow = "#FFAB70",
