@@ -339,7 +339,6 @@ M.load = function(theme)
     DiagnosticWarn              = { fg = theme.colors.yellow, undercurl = false, underline = false, },
     DiagnosticInformation       = { fg = theme.colors.green },
     LspSignatureActiveParameter = { fg = theme.colors.black, bg = theme.colors.green },
-    DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     DiagnosticVirtualTextWarn   = {
       fg = theme.colors.yellow,
       bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.85),
@@ -348,7 +347,8 @@ M.load = function(theme)
       fg = theme.colors.red,
       bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.85),
     },
-    DiagnosticUnderlineWarn     = { fg = theme.colors.yellow, underline = false, undercurl = true },
+    DiagnosticUnderlineWarn     = { sp = theme.colors.yellow, underline = false, undercurl = true },
+    DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
     -- LSPSAGA
     SagaNormal                  = { bg = theme.colors.background },
     SagaBorder                  = {
