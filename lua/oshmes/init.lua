@@ -1,5 +1,5 @@
-local utils = require("utils")
-local highlights = require("highlights")
+local utils = require("oshmes.utils")
+local highlights = require("oshmes.highlight")
 
 local M = {}
 

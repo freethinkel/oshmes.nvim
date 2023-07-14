@@ -1,4 +1,4 @@
-local utils = require("utils")
+local utils = require("oshmes.utils")
 
 local M = {}
 
