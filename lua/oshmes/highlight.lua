@@ -347,8 +347,8 @@ M.load = function(theme)
       fg = theme.colors.red,
       bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.85),
     },
-    DiagnosticUnderlineWarn     = { sp = theme.colors.yellow, underline = false, undercurl = true },
-    DiagnosticUnderlineError    = { sp = theme.colors.red, undercurl = true, underline = false, },
+    DiagnosticUnderlineWarn     = { sp = theme.colors.yellow, fg = "none", underline = false, undercurl = true },
+    DiagnosticUnderlineError    = { sp = theme.colors.red, fg = "none", undercurl = true, underline = false, },
     -- LSPSAGA
     SagaNormal                  = { bg = theme.colors.background },
     SagaBorder                  = {
