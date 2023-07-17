@@ -5,6 +5,7 @@ local M = {}
 M.load = function(theme)
   return {
     Normal                      = { fg = theme.colors.foreground, bg = theme.colors.background },
+    NormalNC                    = "Normal",
     SecondaryBackground         = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.2),
       bg = utils.darken(theme.colors.background, 0.15)
@@ -16,12 +17,12 @@ M.load = function(theme)
     LineNr                      = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.4), },
     CursorLineNr                = {
-      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.1), },
+      fg = utils.mixColors(theme.colors.green, theme.colors.foreground, 0.6), },
     CursorLine                  = {
-      bg = utils.mixColors(theme.colors.background, theme.colors.blue, 0.07),
+      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.07),
       -- ctermfg = "white"
     },
-    Visual                      = "CursorLine",
+    Visual                      = { bg = utils.mixColors(theme.colors.background, theme.colors.blue, 0.2), },
     SignColumn                  = { bg = theme.colors.background },
     NonText                     = "Comment",
     NormalFloat                 = "Normal",
@@ -35,6 +36,7 @@ M.load = function(theme)
       bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
       underline = false,
     },
+    Question                    = { fg = utils.mixColors(theme.colors.green, theme.colors.background, 0.25) },
     IncSearch                   = "Search",
     MatchParen                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2),
@@ -52,11 +54,31 @@ M.load = function(theme)
     PmenuSel                    = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2),
     },
+    BufferInactive              = "Normal",
+    Directory                   = { fg = theme.colors.foreground },
+
+    -- LAZY
+    -- LazyReasonEvent             = { fg = theme.colors.yellow, },
+    -- LazyReasonStart             = { fg = theme.colors.cyan, },
+
+    -- SPECTRE
+    SpectreFile                 = { fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.3) },
+    SpectreBorder               = { fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.9), bg = nil },
+    SpectreDir                  = "SpectreFile",
+    SpectreHeader               = "Comment",
+    SpectreBody                 = { fg = utils.mixColors(theme.colors.foreground, theme.colors.blue, 0.8) },
+    SpectreSearch               = { fg = "none", bg = utils.mixColors(theme.colors.background, theme.colors.red, 0.2) },
+    SpectreReplace              = { fg = "none", bg = utils.mixColors(theme.colors.background, theme.colors.green, 0.2) },
+
+    -- WHICH KEY
+    WhichKeyFloat               = "SecondaryBackground",
+    WhichKeyGroup               = { fg = theme.colors.cyan },
 
     -- MULTI_CURSOR
     VM_Insert                   = { bg = utils.mixColors(theme.colors.green, theme.colors.background, 0.4) },
     VM_Cursor                   = "Cursor",
     VM_Extend                   = { bg = utils.mixColors(theme.colors.cyan, theme.colors.background, 0.2) },
+    VM_Mono                     = "Cursor",
 
     -- SYNTAX
     Error                       = {
@@ -78,6 +100,11 @@ M.load = function(theme)
     Constant                    = { fg = utils.mixColors(theme.colors.yellow, theme.colors.foreground, 0.3) },
     Statement                   = { fg = theme.colors.yellow },
     Structure                   = { fg = theme.colors.magenta },
+    Special                     = { fg = theme.colors.blue, },
+    Conceal                     = {
+      fg = theme.colors.foreground,
+      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2)
+    },
 
     -- CSS
     cssClassName                = { fg = theme.colors.magenta },
@@ -87,6 +114,12 @@ M.load = function(theme)
 
     -- NVIMTREE
     NvimTreeNormal              = "SecondaryBackground",
+    NvimTreeGitDirty            = { fg = theme.colors.blue },
+    NvimTreeGitNew              = { fg = theme.colors.green },
+    NvimTreeGitDeleted          = { fg = theme.colors.red },
+    NvimTreeFolderIcon          = { fg = theme.colors.foreground },
+    NvimTreeFolderName          = { fg = theme.colors.foreground },
+    NvimTreeWindowPicker        = { bg = theme.colors.blue, fg = theme.colors.background },
 
     -- NEOTREE
     NeoTreeNormal               = "SecondaryBackground",
@@ -96,6 +129,7 @@ M.load = function(theme)
     NeoTreeGitModified          = { fg = theme.colors.blue },
     NeoTreeGitUnstaged          = { fg = theme.colors.red },
     NeoTreeGitUntracked         = { fg = theme.colors.cyan },
+    NeoTreeGitDeleted           = { fg = theme.colors.red },
     NeoTreeTabActive            = "NeoTreeNormal",
     NeoTreeTabInactive          = { bg = theme.colors.background },
     NeoTreeTabSeparatorInactive = { fg = theme.colors.background, bg = theme.colors.background },
@@ -104,8 +138,15 @@ M.load = function(theme)
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.9), bg = nil },
 
     -- CORE STATUSLINE
-    Statusline                  = {
+    -- Statusline                  = {
+    --   fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.2),
+    --   bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.1)
+    -- },
+    StatusLine                  = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.2),
+      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.1)
+    },
+    StatusLineNC                = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.1)
     },
 
@@ -124,6 +165,15 @@ M.load = function(theme)
     TbLineThemeToggleBtn        = "SecondaryBackground",
     TbLineCloseAllBufsBtn       = "SecondaryBackground",
 
+    -- BUFFERLINE
+    BufferLineBackground        = "SecondaryBackground",
+    BufferLineDevIconLua        = "SecondaryBackground",
+    BufferLineCloseButton       = "SecondaryBackground",
+    BufferLineFill              = "SecondaryBackground",
+    BufferLineSeparator         = "SecondaryBackgroundEmpty",
+    BufferLineIndicatorSelected = "SecondaryBackgroundEmpty",
+    PanelHeading                = "SecondaryBackground",
+
     -- INDENTBLANKLINE
     IndentBlanklineChar         = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.9), bg = nil },
@@ -139,12 +189,9 @@ M.load = function(theme)
 
     -- TELESCOPE
     TelescopeTitle              = { fg = theme.colors.cyan },
-    TelescopeBorder             = {
-      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.6),
-      bg = utils.darken(theme.colors.background, 0.1)
-    },
     TelescopePromptCounter      = { fg = theme.colors.cyan },
     TelescopePromptBorder       = { fg = theme.colors.green, bg = utils.darken(theme.colors.background, 0.1) },
+    TelescopeBorder             = "TelescopePromptBorder",
     TelescopeNormal             = { bg = utils.darken(theme.colors.background, 0.1) },
 
     -- DEVICONS
@@ -191,7 +238,8 @@ M.load = function(theme)
     CmpItemKindCopilot          = { fg = theme.colors.green },
 
     -- TREESITTER
-
+    Todo                        = { fg = theme.colors.blue, bg = "none" },
+    ['@text.todo.checked']      = { fg = theme.colors.green },
     TSAnnotation                = { fg = theme.colors.foreground, bg = nil, },
     TSAttribute                 = { fg = theme.colors.magenta, bg = nil, },
     TSBoolean                   = { fg = theme.colors.foreground, bg = nil, },
@@ -204,7 +252,7 @@ M.load = function(theme)
     TSConstMacro                = { fg = theme.colors.foreground, bg = nil, },
     TSError                     = { fg = theme.colors.foreground, bg = nil, },
     TSException                 = { fg = theme.colors.foreground, bg = nil, },
-    TSField                     = { fg = theme.colors.foreground, bg = nil, },
+    TSField                     = { fg = theme.colors.cyan, bg = nil, },
     TSFloat                     = { fg = theme.colors.foreground, bg = nil, },
     TSFunction                  = { fg = theme.colors.foreground, bg = nil, },
     TSFuncBuiltin               = { fg = theme.colors.foreground, bg = nil, italic = true },
@@ -225,7 +273,7 @@ M.load = function(theme)
     TSOperator                  = {
       fg = utils.mixColors(theme.colors.red, theme.colors.foreground, 0.2) },
     TSParameter                 = { fg = theme.colors.foreground, bg = nil, },
-    TSParameterReference        = { fg = theme.colors.foreground, bg = nil, },
+    TSParameterReference        = { fg = theme.colors.green, bg = nil, },
     TSProperty                  = { fg = theme.colors.magenta, bg = nil, },
     TSPunctBracket              = { fg = utils.mixColors(theme.colors.blue, theme.colors.foreground, 0.1) },
     TSPunctDelimiter            = { fg = theme.colors.foreground, bg = nil, },
@@ -242,9 +290,13 @@ M.load = function(theme)
     TSEmphasis                  = { fg = theme.colors.foreground, bg = nil, italic = true },
     TSUnderline                 = { fg = theme.colors.foreground, bg = nil, underline = true },
     TSStrike                    = { fg = theme.colors.foreground, bg = nil, strikethrough = true },
-    TSTitle                     = { fg = theme.colors.foreground, bg = nil, },
+    TSTitle                     = { fg = theme.colors.blue, bg = nil, },
     TSLiteral                   = { fg = theme.colors.foreground, bg = nil, },
-    TSURI                       = { fg = theme.colors.foreground, bg = nil, underline = true },
+    TSURI                       = {
+      fg = utils.mixColors(theme.colors.blue, theme.colors.foreground, 0.5),
+      bg = nil,
+      underline = true
+    },
     TSType                      = { fg = theme.colors.blue, bg = nil, },
     TSTypeBuiltin               = { fg = theme.colors.foreground, bg = nil, italic = true },
     TSVariable                  = { fg = theme.colors.foreground, bg = nil, },
