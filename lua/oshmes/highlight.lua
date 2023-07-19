@@ -54,6 +54,9 @@ M.load = function(theme)
     PmenuSel                    = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2),
     },
+    PmenuThumb                  = { bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.5) },
+    PmenuSbar                   = { bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.3) },
+
     BufferInactive              = "Normal",
     Directory                   = { fg = theme.colors.foreground },
 
@@ -252,7 +255,7 @@ M.load = function(theme)
     TSConstMacro                = { fg = theme.colors.foreground, bg = nil, },
     TSError                     = { fg = theme.colors.foreground, bg = nil, },
     TSException                 = { fg = theme.colors.foreground, bg = nil, },
-    TSField                     = { fg = theme.colors.cyan, bg = nil, },
+    TSField                     = { fg = theme.colors.foreground, bg = nil, },
     TSFloat                     = { fg = theme.colors.foreground, bg = nil, },
     TSFunction                  = { fg = theme.colors.foreground, bg = nil, },
     TSFuncBuiltin               = { fg = theme.colors.foreground, bg = nil, italic = true },
