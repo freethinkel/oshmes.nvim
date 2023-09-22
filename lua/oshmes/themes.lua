@@ -13,7 +13,7 @@ M.oshmes_dark = {
     magenta = "#B392F0",
     cyan = "#a0fff8",
     white = "#bbbbbb",
-  }
+  },
 }
 
 M.github_dimmed = {
@@ -29,7 +29,7 @@ M.github_dimmed = {
     magenta = "#dcbdfb",
     cyan = "#96d0ff",
     white = "#adbac7",
-  }
+  },
 }
 
 M.mountain = {
@@ -46,7 +46,7 @@ M.mountain = {
     cyan = "#8aabac",
     white = "#e7e7e7",
     orange = "#c6a679",
-  }
+  },
 }
 
 M.tokyonight = {
@@ -62,7 +62,23 @@ M.tokyonight = {
     magenta = "#bb9af7",
     cyan = "#7dcfff",
     white = "#c0caf5",
-  }
+  },
+}
+
+M.pomandres = {
+  name = "pomandres",
+  colors = {
+    foreground = "#ffffff",
+    background = "#1b1e28",
+    black = "#1b1e28",
+    red = "#5de4c7",
+    green = "#5de4c7",
+    yellow = "#5de4c7",
+    blue = "#add7ff",
+    magenta = "#5de4c7",
+    cyan = "#89ddff",
+    white = "#ffffff",
+  },
 }
 
 return M

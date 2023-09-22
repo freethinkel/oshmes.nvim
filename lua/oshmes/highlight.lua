@@ -17,7 +17,7 @@ M.load = function(theme)
     LineNr                      = {
       fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.4), },
     CursorLineNr                = {
-      fg = utils.mixColors(theme.colors.green, theme.colors.foreground, 0.6), },
+      fg = utils.mixColors(theme.colors.green, theme.colors.foreground, 0.9), },
     CursorLine                  = {
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.07),
       -- ctermfg = "white"
@@ -32,6 +32,10 @@ M.load = function(theme)
     },
     SpecialKey                  = { fg = theme.colors.cyan },
     FoldColumn                  = { bg = "none" },
+    Folded                      = {
+      bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.05),
+      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.05)
+    },
     Search                      = {
       bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.8),
       underline = false,
@@ -59,6 +63,8 @@ M.load = function(theme)
 
     BufferInactive              = "Normal",
     Directory                   = { fg = theme.colors.foreground },
+    Function                    = { fg = theme.colors.magenta },
+    PreProc                     = { fg = theme.colors.yellow, },
 
     -- LAZY
     -- LazyReasonEvent             = { fg = theme.colors.yellow, },
@@ -108,6 +114,8 @@ M.load = function(theme)
       fg = theme.colors.foreground,
       bg = utils.mixColors(theme.colors.background, theme.colors.foreground, 0.2)
     },
+    Keyword                     = {
+      fg = utils.mixColors(theme.colors.red, theme.colors.foreground, 0.2) },
 
     -- CSS
     cssClassName                = { fg = theme.colors.magenta },
@@ -190,12 +198,25 @@ M.load = function(theme)
     GitSignsAdd                 = { fg = theme.colors.green, bg = "none" },
     GitSignsUntracked           = { fg = theme.colors.cyan },
 
+    -- DIFFVIEW
+    DiffviewDiffDelete          = {
+      bg = "none",
+      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.6)
+    },
+    DiffviewStatusAdded         = { fg = utils.mixColors(theme.colors.green, theme.colors.background, 0.25), bg = "none" },
+    DiffviewStatusUntracked     = { fg = utils.mixColors(theme.colors.green, theme.colors.background, 0.25), bg = "none" },
+    DiffviewStatusModified      = { fg = utils.mixColors(theme.colors.blue, theme.colors.background, 0.25), bg = "none" },
+
+    DiffviewFilePanelDeletions  = { fg = utils.mixColors(theme.colors.red, theme.colors.background, 0.25), bg = "none" },
+    DiffviewFilePanelInsertions = { fg = utils.mixColors(theme.colors.green, theme.colors.background, 0.25), bg = "none" },
+
     -- TELESCOPE
     TelescopeTitle              = { fg = theme.colors.cyan },
     TelescopePromptCounter      = { fg = theme.colors.cyan },
     TelescopePromptBorder       = { fg = theme.colors.green, bg = utils.darken(theme.colors.background, 0.1) },
     TelescopeBorder             = "TelescopePromptBorder",
     TelescopeNormal             = { bg = utils.darken(theme.colors.background, 0.1) },
+    TelescopeResultsDiffChange  = { fg = theme.colors.blue, },
 
     -- DEVICONS
     DevIconTs                   = { fg = theme.colors.blue },
@@ -262,8 +283,7 @@ M.load = function(theme)
     TSFuncMacro                 = { fg = theme.colors.foreground, bg = nil, },
     TSInclude                   = {
       fg = utils.mixColors(theme.colors.red, theme.colors.foreground, 0.2) },
-    TSKeyword                   = {
-      fg = utils.mixColors(theme.colors.red, theme.colors.foreground, 0.2) },
+    TSKeyword                   = "Keyword",
     TSKeywordFunction           = {
       fg = utils.mixColors(theme.colors.red, theme.colors.foreground, 0.2) },
     TSKeywordOperator           = {
@@ -301,7 +321,7 @@ M.load = function(theme)
       underline = true
     },
     TSType                      = { fg = theme.colors.blue, bg = nil, },
-    TSTypeBuiltin               = { fg = theme.colors.foreground, bg = nil, italic = true },
+    TSTypeBuiltin               = "TSType",
     TSVariable                  = { fg = theme.colors.foreground, bg = nil, },
     TSVariableBuiltin           = { fg = theme.colors.foreground, bg = nil, italic = true },
 
@@ -383,12 +403,13 @@ M.load = function(theme)
 
     -- LSP
     CodeActionNumber            = {
-      fg = utils.mixColors(theme.colors.magenta, theme.colors.background, 0.4),
+      fg = utils.mixColors(theme.colors.cyan, theme.colors.background, 0.1),
       bg = "none"
     },
     ["@lsp.type.enumMember"]    = { fg = theme.colors.foreground },
     ["@lsp.type.function"]      = { fg = theme.colors.magenta },
     ["@lsp.type.variable"]      = { fg = theme.colors.blue },
+    ["@lsp.type.namespace"]     = "Identifier",
     DiagnosticHint              = { fg = theme.colors.green },
     DiagnosticError             = { fg = theme.colors.red },
     DiagnosticWarn              = { fg = theme.colors.yellow, undercurl = false, underline = false, },
@@ -402,12 +423,24 @@ M.load = function(theme)
       fg = theme.colors.red,
       bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.85),
     },
-    DiagnosticUnderlineWarn     = { sp = theme.colors.yellow, fg = "none", underline = false, undercurl = true },
-    DiagnosticUnderlineError    = { sp = theme.colors.red, fg = "none", undercurl = true, underline = false, },
+    DiagnosticUnderlineWarn     = {
+      sp = theme.colors.yellow,
+      fg = "none",
+      underline = false,
+      undercurl = true,
+      bg = utils.mixColors(theme.colors.yellow, theme.colors.background, 0.95)
+    },
+    DiagnosticUnderlineError    = {
+      sp = theme.colors.red,
+      fg = "none",
+      undercurl = true,
+      underline = false,
+      bg = utils.mixColors(theme.colors.red, theme.colors.background, 0.95)
+    },
     -- LSPSAGA
     SagaNormal                  = { bg = theme.colors.background },
     SagaBorder                  = {
-      fg = utils.mixColors(theme.colors.foreground, theme.colors.background, 0.7),
+      fg = utils.mixColors(theme.colors.blue, theme.colors.background, 0.7),
       bg = theme.colors.background
     }
   }

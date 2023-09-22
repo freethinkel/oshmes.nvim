@@ -22,7 +22,7 @@ M.setup = function(theme)
 
   lualine_theme.visual = {
     a = { bg = colors.magenta, fg = colors.black },
-    b = { bg = colors.foreground, fg = colors.magenta },
+    b = { bg = colors.background, fg = colors.magenta },
   }
 
   lualine_theme.replace = {

@@ -32,6 +32,7 @@ local set_terminal_colors = function(colors)
 end
 
 M.setup = function(theme)
+  vim.cmd("hi clear")
   -- if vim.g.colors_name then
   --   vim.cmd("hi clear")
   -- end
